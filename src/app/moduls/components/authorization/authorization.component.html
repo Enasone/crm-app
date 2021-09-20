@@ -1,0 +1,51 @@
+<div class="auth_main_block">
+  <div>
+    <form *ngIf="auth == false; else registration">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email адрес</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="mail@gmail.com">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Пароль</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="******">
+      </div>
+      <div class="auth_text_auth">
+        <a (click)="reg(true)">Регистрация</a>
+      </div>
+      <div class="auth_btn_submit">
+        <button type="submit" class="btn btn-primary">Войти</button>
+      </div>
+    </form>
+
+    <ng-template #registration>
+      <form>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email адрес</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="mail@gmail.com">
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Имя</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Дима">
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Фамилия</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Иванов">
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Пароль</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="******">
+        </div>
+
+        <div class="auth_text_auth">
+          <a (click)="reg(false)">Вход по Email</a>
+        </div>
+        <div class="auth_btn_submit">
+          <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+        </div>
+      </form>
+    </ng-template>
+  </div>
+</div>
